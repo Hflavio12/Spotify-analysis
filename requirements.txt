@@ -1,7 +1,0 @@
-datasets
-pandas
-scikit-learn
-tensorflow
-numpy
-matplotlib
-seaborn

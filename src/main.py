@@ -3,7 +3,6 @@ from src.data_loader import DataLoader
 from src.preprocessor import Preprocessor
 from src.model import NeuralNetworkModel
 from src.evaluator import Evaluator
-import matplotlib.pyplot as plt
 
 def main():
     print("=" * 50)
@@ -46,18 +45,11 @@ def main():
     print(f"RMSE: {metrics['rmse']:.2f}")
     print(f"R² Score: {metrics['r2']:.4f}")
     
-    # Visualizzazione training history
-    evaluator.plot_training_history(history)
-    
-    # Visualizzazione predizioni vs valori reali
-    evaluator.plot_predictions(y_test, y_pred)
-    
     # Salvataggio modello
     print("\n[INFO] Salvataggio modello...")
     model.save_model('models/spotify_model.h5')
     print("Modello salvato in: models/spotify_model.h5")
     
-    plt.show()
 
 if __name__ == "__main__":
     main()
